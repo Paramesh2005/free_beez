@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Freelancer Job Details Upload Form</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  .container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  input, select, textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
+  input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Freelancer Job Details Upload</h2>
+  
+  <form action="uploadjob.php" method="post" enctype="multipart/form-data">
+    <label for="job_title">Job Title:</label>
+    <input type="text" id="job_title" name="job_title" required>
+    
+    <label for="company_name">Company Name:</label>
+    <input type="text" id="company_name" name="company_name" required>
+    
+    <label for="job_description">Job Description:</label>
+    <textarea id="job_description" name="job_description" rows="4" required></textarea>
+    
+    <label for="salary">Budget:</label>
+    <input type="number" id="salary" name="salary" required>
+    
+    <label for="job_type">Project Type:</label>
+    <select id="job_type" name="job_type" required>
+      <option value="short_term">Short-term</option>
+      <option value="long_term">Long-term</option>
+    </select>
+    
+    <label for="linkedin">LinkedIn Profile Link:</label>
+    <input type="text" id="linkedin" name="linkedin" placeholder="https://www.linkedin.com/in/yourprofile">
+    
+    <label for="whatsapp">WhatsApp Number:</label>
+    <input type="tel" id="whatsapp" name="whatsapp" placeholder="WhatsApp Number" required>
+    
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+</body>
+</html>

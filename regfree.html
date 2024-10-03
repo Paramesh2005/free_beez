@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        /* Your CSS styles here */
+        /* Body styles */
+        body {
+            font-family: "Inter", sans-serif;
+            background-image: url("header-bg.jpg");
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        /* Form styles */
+        .formbold-main-wrapper {
+            background-color: transparent;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgb(245, 243, 243);
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+        }
+        
+        .formbold-form-label {
+            color: #f1eaea;
+        }
+        
+        .formbold-form-input {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            margin: 5px;
+            font-size: 16px;
+            color: #07074D;
+        }
+        
+        .formbold-input-flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .formbold-input-flex > div {
+            width: calc(50% - 10px);
+        }
+        
+        .formbold-input-radio-wrapper {
+            margin-bottom: 28px;
+        }
+        
+        .formbold-radio-flex {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .formbold-radio-group {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .formbold-radio-label {
+            font-size: 14px;
+            line-height: 24px;
+            color: #f1ebeb;
+            cursor: pointer;
+        }
+        
+        .formbold-input-radio {
+            cursor: pointer;
+        }
+        
+        .formbold-radio-checkmark {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #fff;
+            border: 1px solid #ccc;
+        }
+        
+        .formbold-radio-label .formbold-input-radio:checked ~ .formbold-radio-checkmark {
+            background-color: #6A64F1;
+        }
+        
+        .formbold-radio-checkmark:after {
+            content: "";
+            display: none;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #07074D;
+        }
+        
+        .formbold-radio-label .formbold-input-radio:checked ~ .formbold-radio-checkmark:after {
+            display: block;
+        }
+        
+        .formbold-btn {
+            width: 100%;
+            background-color: red;
+            color: #fff;
+            padding: 14px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+        }
+        
+        .formbold-btn:hover {
+            background-color: #4caf50;
+        }
+    </style>
+</head>
+<body>
+    <div class="formbold-main-wrapper">
+        <div class="formbold-form-wrapper">
+            <form action="regfree.php" method="POST">
+                <div class="formbold-input-flex">
+                    <div>
+                        <label for="firstname" class="formbold-form-label">First name:</label>
+                        <input type="text" name="firstname" id="firstname" class="formbold-form-input" required>
+                    </div>
+                    <div>
+                        <label for="lastname" class="formbold-form-label">Last name:</label>
+                        <input type="text" name="lastname" id="lastname" class="formbold-form-input" required>
+                    </div>
+                </div>
+                <div class="formbold-input-flex">
+                    <div>
+                        <label for="email" class="formbold-form-label">Email:</label>
+                        <input type="email" name="email" id="email" class="formbold-form-input" required>
+                    </div>
+                    <div>
+                        <label for="phone" class="formbold-form-label">Phone:</label>
+                        <input type="text" name="phone" id="phone" class="formbold-form-input" required>
+                    </div>
+                </div>
+                <div class="formbold-input-radio-wrapper">
+                    <label for="jobtitle" class="formbold-form-label">What are you best in?</label>
+                    <div class="formbold-radio-flex">
+                        <div class="formbold-radio-group">
+                            <label class="formbold-radio-label">
+                                <input class="formbold-input-radio" type="radio" name="jobtitle" id="web_design">
+                                Web Design
+                                <span class="formbold-radio-checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="formbold-radio-group">
+                            <label class="formbold-radio-label">
+                                <input class="formbold-input-radio" type="radio" name="jobtitle" id="graphics_design">
+                                Graphics Design
+                                <span class="formbold-radio-checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="formbold-radio-group">
+                            <label class="formbold-radio-label">
+                                <input class="formbold-input-radio" type="radio" name="jobtitle" id="logo_design">
+                                Logo Design
+                                <span class="formbold-radio-checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="formbold-radio-group">
+                            <label class="formbold-radio-label">
+                                <input class="formbold-input-radio" type="radio" name="jobtitle" id="others">
+                                Others
+                                <span class="formbold-radio-checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <label for="message" class="formbold-form-label">Message:</label>
+                    <textarea rows="6" name="message" id="message" placeholder="Type your message" class="formbold-form-input"></textarea>
+                </div>
+                <button class="formbold-btn" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
